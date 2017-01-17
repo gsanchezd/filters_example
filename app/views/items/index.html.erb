@@ -1,0 +1,28 @@
+<%= form_tag items_path, method: "get", remote: true do %>
+  <%= text_field(:filter, :price) %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="items">
+    <% @items.each do |item| %>
+      <%= render item %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cAb2bl8IwaM" frameborder="0" allowfullscreen></iframe>
+
+<%= link_to 'New Item', new_item_path %>
